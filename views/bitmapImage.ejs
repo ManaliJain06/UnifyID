@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8"/>
+    <title>UniqueId Bitmap Challenge</title>
+</head>
+<body>
+    <div align="center">
+        <span><h1>Random Bitmap generator</h1></span>
+        <br>
+        <canvas id="bitImagecanvas" width="300" height="300" style="border: 2px solid black;">
+            Browser doesn't support Bitmap images
+        </canvas>
+
+        <input type="hidden" name="form_id" id="numbers"  value="<%=x%>">
+    </div>
+</body>
+<script>
+    var t = document.getElementById("numbers").value;
+    console.log(t);
+    var points = t.split(",");
+    var image = document.getElementById("bitImagecanvas");
+    var context = image.getContext("2d");
+    var imgData = context.createImageData(300, 300);
+        for (var i = 0; i < imgData.data.length; i += 10) {
+            imgData.data[i] = points[1];
+            imgData.data[i+1] = points[2];
+            imgData.data[i+2] = points[3];
+            imgData.data[i+3] = points[4];
+            imgData.data[i+4] = points[5];
+            imgData.data[i+5] = points[6];
+            imgData.data[i+6] = points[7];
+            imgData.data[i+7] = points[8];
+            imgData.data[i+8] = points[9];
+            imgData.data[i+9] = points[10];
+            imgData.data[i+10] = 255;
+        }
+        context.putImageData(imgData, 0, 0);
+</script>
+</html>
