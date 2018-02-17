@@ -7,7 +7,7 @@
     <div align="center">
         <span><h1>Random Bitmap generator</h1></span>
         <br>
-        <canvas id="bitImagecanvas" width="300" height="300" style="border: 2px solid black;">
+        <canvas id="bitImagecanvas" width="128" height="128" style="border: 2px solid black;">
             Browser doesn't support Bitmap images
         </canvas>
 
@@ -20,7 +20,7 @@
     var points = t.split(",");
     var image = document.getElementById("bitImagecanvas");
     var context = image.getContext("2d");
-    var imgData = context.createImageData(300, 300);
+    var imgData = context.createImageData(128, 128);
         for (var i = 0; i < imgData.data.length; i += 10) {
             imgData.data[i] = points[1];
             imgData.data[i+1] = points[2];
